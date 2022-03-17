@@ -1,11 +1,11 @@
 <template>
   <div>
-        <gmap-map :options="mapStyle" map-type-id="terrain" :zoom="5" :center="center" style="width:100%;height:80%;position:absolute;top:0px;left:0px;">
+        <gmap-map :options="mapStyle" map-type-id="terrain" :zoom="7" :center="center" style="width:100%;height:80%;position:absolute;top:0px;left:0px;">
             <gmap-polygon :paths="getBorders" :options="coords" ></gmap-polygon>
 		</gmap-map>
         <div style="position:absolute;bottom:10px;width:80%">
             <p class="text-center">{{era}}</p>
-            <b-form-input  v-model="era" min=1950 max=2022 step=1 type="range"></b-form-input>
+            <b-form-input  v-model="era" min=1960 max=2022 step=1 type="range"></b-form-input>
         </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     name: 'MyMap',
     data() {
         return {
-            era:0,
+            era:1960,
 			center: { 
 				lat: 28.108932,
 				lng: -10.228139
@@ -39,7 +39,7 @@ export default {
                 strokeOpacity: 0.8,
                 strokeWeight: 3,
                 fillColor: "#A41E2F",
-                fillOpacity: 0.6,
+                fillOpacity: 0.6
             }
         }
     },
@@ -61,7 +61,7 @@ export default {
                 return [{}]
             }
         }
-    }
+    },
 }
 
 </script>

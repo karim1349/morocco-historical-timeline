@@ -5,7 +5,7 @@
 		</gmap-map>
         <div style="position:absolute;bottom:10px;width:80%">
             <p class="text-center">{{era}}</p>
-            <b-form-input  v-model="era" min=1960 max=2022 step=1 type="range"></b-form-input>
+            <b-form-input  v-model="era" min=1950 max=2022 step=1 type="range"></b-form-input>
         </div>
   </div>
 </template>
@@ -15,12 +15,13 @@ import Morocco1979 from '../assets/morocco.json'
 import Morocco1978 from '../assets/morocco1978.json'
 import Morocco1974 from '../assets/morocco1974.json'
 import Morocco1968 from '../assets/morocco1968.json'
+import Morocco1959 from '../assets/morocco1959.json'
 
 export default {
     name: 'MyMap',
     data() {
         return {
-            era:1960,
+            era:1957,
 			center: { 
 				lat: 28.108932,
 				lng: -10.228139
@@ -56,6 +57,9 @@ export default {
             }
             else if(this.era >= 1960) {
                 return Morocco1968
+            }
+            else if(this.era >= 1956) {
+                return Morocco1959
             }
             else {
                 return [{}]

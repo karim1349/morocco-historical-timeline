@@ -1,15 +1,14 @@
 <template>
-  <div>
-    OK
-  </div>
+  <MyMap/>
 </template>
 
 <script>
+import MyMap from './components/Map.vue'
 
 export default {
   name: 'App',
   components: {
-    
+    MyMap
   }
 }
 </script>
